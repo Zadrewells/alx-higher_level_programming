@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-# 12-roman_to_int.py
-# Zadre Wells <zadrewells@gmail.com>
 
 
 def roman_to_int(roman_string):
