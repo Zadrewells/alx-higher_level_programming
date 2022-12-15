@@ -1,19 +1,11 @@
 #!/usr/bin/python3
-"""
-    Module fetches https://intranet.hbtn.io/status
-"""
-import urllib.request
+""" code to fetch data """
+from urllib import request
 
-
-if __name__ == "__main__":
-    try:
-        with urllib.request.urlopen('https://intranet.hbtn.io/status') as resp:
-            if resp is not None:
-                html = resp.read()
-                print("Body response:")
-                print("\t- type: {}".format(type(html)))
-                print("\t- content: {}".format(html))
-                print("\t- utf8 content: {}".format(html.decode('utf-8')))
-    except Exception:
-        pass
-
+if __name__ == '__main__':
+    url = 'https://alx-intranet.hbtn.io/status'
+    with request.urlopen(url) as response:
+        print("Body response:")
+        page = response.read()
+        data = '\t- type: {}\n\t- content: {}\n\t- utf8 content: {}'
+        print(data.format(type(page), page, page.decode('UTF-8')))
